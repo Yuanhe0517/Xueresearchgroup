@@ -5,8 +5,25 @@
 
 main:
   - name: Research
-    url: research
-    weight: 10
+    url: /research/
+    weight: 20
+    identifier: research          # 用来作为 parent 锚点
+
+  - name: Mechanics of soft material
+    url: /research/soft-material/
+    parent: research
+    weight: 21
+
+  - name: Mechanical principles of soft tissue development
+    url: /research/soft-tissue/
+    parent: research
+    weight: 22
+
+  - name: Bionics of soft tissues
+    url: /research/data-driven/
+    parent: research
+    weight: 23
+
   #- name: News
   #  url: post
   #  weight: 20

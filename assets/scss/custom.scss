@@ -1,0 +1,50 @@
+// /* 自定义 hero 的紧凑排版 */
+// .hero-compact h2 {
+//   font-size: 1rem;      /* 改小标题字号 */
+//   line-height: 1.3;
+//   margin-bottom: 1rem;
+// }
+
+// .hero-compact p {
+//   font-size: 0.1rem;        /* 正文大小 */
+//   line-height: 1;
+// }
+
+// .hero-compact li {
+//   font-size: 1rem;        /* 列表字体 */
+//   line-height: 1.6;
+// }
+
+/* 去掉测试线 */
+// html { border-top: none; }
+// html { border-top: 3px solid #4caf50 !important; }
+/* Hero 区块文字缩小版 */
+.home-section.hero .hero-lead h1,
+.home-section.hero .hero-lead h2 {
+  font-size: 1.6rem;     /* 移动端 */
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.home-section.hero .hero-lead p,
+.home-section.hero .hero-lead li {
+  font-size: 1rem;       /* 正文和列表 */
+  line-height: 1.65;
+}
+
+/* 桌面端（大屏）再放大一点 */
+@media (min-width: 992px) {
+  .home-section.hero .hero-lead h1,
+  .home-section.hero .hero-lead h2 { font-size: 1.0rem; }
+  .home-section.hero .hero-lead p,
+  .home-section.hero .hero-lead li { font-size: 0.5rem; }
+}
+
+.img-center { text-align: center; }
+.img-center img {
+  max-width: 400px;   /* 你想要的宽度 */
+  width: 100%;        /* 小屏自适应 */
+  height: auto;
+}
+
+
