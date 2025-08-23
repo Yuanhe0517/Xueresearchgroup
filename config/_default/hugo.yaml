@@ -5,8 +5,8 @@
 
 
 title: Soft Mechanics Lab (SML) # Website name
-baseURL: 'www.xueresearchgroup.com' # Website URL
-
+baseURL: 'https://www.xueresearchgroup.com/' # Website URL
+canonifyURLs: true
 ############################
 ## LANGUAGE
 ############################
