@@ -51,7 +51,14 @@ jobs:
           HUGO_ENVIRONMENT: production
         run: |
           echo "Hugo Cache Dir: $(hugo config | grep cachedir)"
-          hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+          # 使用自定义域名作为 baseURL（不要再用 steps.pages.outputs.base_url）
+          hugo --minify --baseURL "${{ env.BASE_URL }}"
+
+      # 写入 CNAME，保证每次发布都带上自定义域
+      - name: Add CNAME
+        run: |
+          echo "www.xueresearchgroup.com" > public/CNAME
+          
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
