@@ -21,9 +21,7 @@ superuser: true
 #bio: My research interests include distributed robotics, mobile computing and programmable #matter.
 
 interests:
-  - Artificial Intelligence
-  - Computational Linguistics
-  - Information Retrieval
+
 
 education:
   courses:
