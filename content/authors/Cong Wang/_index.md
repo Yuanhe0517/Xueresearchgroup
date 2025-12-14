@@ -65,6 +65,9 @@ email: ''
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
   #- Graduate student
-  - Grad Students
+  - PhD Student
+
+# 排序（数字越小越靠前）
+weight: 3
 ---
 My research interests include soft mechanics, biomechanics.

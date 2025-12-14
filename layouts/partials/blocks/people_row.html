@@ -1,0 +1,118 @@
+{{/* layouts/partials/blocks/people_row.html —— 左图右文列表（兼容 authors/people/person，兼容 branch/leaf bundle） */}}
+{{ $page  := or .Page $.Page }}             {{/* 优先 .Page；否则用根 $.Page */}}
+{{ $block := .block }}                      {{/* landing 模式才有 .block */}}
+
+{{ warnf "PEOPLE_ROW: page_ok=%t block_ok=%t path=%v"
+    (ne $page nil) (ne $block nil) (cond $page $page.File.Path nil) }}
+
+
+<section class="people-list container">
+  <h1 class="page-title">{{ $block.content.title | default $page.Title }}</h1>
+
+  {{/* 读取页面上的配置 */}}
+  {{ $groups := $block.content.user_groups }}
+  {{ $sortBy := $block.content.sort_by | default "Title" }}
+  {{ $asc    := $block.content.sort_ascending | default true }}
+
+  {{ $all := slice }}
+  {{ with site.GetPage "section" "authors" }}{{ $all = .Pages }}{{ end }}
+
+  {{/* 只保留真正存在于 content/authors/** 的页面（有文件的） */}}
+  {{ $all = where $all "File" "!=" nil }}
+  {{ $groupsSafe := or $groups (slice) }}
+  {{ warnf "PEOPLE DEBUG: groups=%v | groups_len=%d | sort_by=%v | asc=%v" $groupsSafe (len $groupsSafe) $sortBy $asc }}
+  {{ warnf "PEOPLE DEBUG: authors_total=%d" (len $all) }}
+  
+
+  {{/* 渲染函数（用内联模板避免重复） */}}
+  {{- define "renderPersonRow" -}}
+    {{- $p := . -}}
+    {{- $avatar := "" -}}
+    {{- with $p.Resources.GetMatch "*avatar*" }}{{ $avatar = .RelPermalink }}{{ end -}}
+    {{- if and (eq $avatar "") (isset $p.Params "avatar") }}{{ $avatar = (printf "%s" $p.Params.avatar | relURL) }}{{ end -}}
+    {{- if and (eq $avatar "") (isset $p.Params "image")  }}{{ $avatar = (printf "%s" $p.Params.image  | relURL) }}{{ end -}}
+    {{- if and (eq $avatar "") (isset $p.Params "photo")  }}{{ $avatar = (printf "%s" $p.Params.photo  | relURL) }}{{ end -}}
+
+    <article class="person-row">
+      <div class="person-photo">
+        {{ if $avatar }}<img src="{{ $avatar }}" alt="{{ $p.Title }}">{{ end }}
+      </div>
+      <div class="person-info">
+        <h3 class="person-name"><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h3>
+        <div class="person-meta">
+          {{ with $p.Params.role }}{{ . }}{{ end }}
+          {{ with $p.Params.position }}{{ . }}{{ end }}
+          {{ with $p.Params.enroll }} ({{ . }}){{ end }}
+        </div>
+        {{ with $p.Params.email }}<div class="person-line"><a href="mailto:{{ . }}">{{ . }}</a></div>{{ end }}
+        {{ with $p.Params.office }}<div class="person-line">Office: {{ . }}</div>{{ end }}
+        {{ if $p.Params.summary }}<p>{{ $p.Params.summary }}</p>{{ else }}{{ with $p.Summary }}<p>{{ . }}</p>{{ end }}{{ end }}
+        <div class="person-links">
+          {{ with $p.Params.scholar }}<a href="{{ . }}" target="_blank" rel="noopener">Google Scholar</a>{{ end }}
+          {{ with $p.Params.researchgate }}{{ if $p.Params.scholar }} · {{ end }}<a href="{{ . }}" target="_blank" rel="noopener">ResearchGate</a>{{ end }}
+          {{ with $p.Params.github }} · <a href="{{ . }}" target="_blank" rel="noopener">GitHub</a>{{ end }}
+        </div>
+      </div>
+    </article>
+  {{- end -}}
+
+  
+  {{/* 如果有配置分组，就按分组渲染；否则直接渲染全部 */}}
+{{ if $groups }}
+  {{ $anyPrinted := false }}
+  {{ range $g := $groups }}
+  
+    {{/* 兼容 user_groups 是数组或字符串：手动筛选 */}}
+    {{ $authors := slice }}
+    {{ range $all }}
+      {{ $p := . }}
+      {{ $match := false }}
+      {{ with $p.Params.user_groups }}
+        {{ if (reflect.IsSlice .) }}
+          {{ $match = (in . $g) }}
+        {{ else }}
+          {{ $match = (eq . $g) }}
+        {{ end }}
+      {{ end }}
+      {{ if $match }}
+        {{ $authors = $authors | append $p }}
+      {{ end }}
+    {{ end }}
+
+    {{ warnf "PEOPLE DEBUG: group=%q match=%d" $g (len $authors) }}
+
+    {{ if gt (len $authors) 0 }}
+      {{ $anyPrinted = true }}
+      <h2 class="people-group">{{ $g }}</h2>
+      {{ $ordered := cond $asc (sort $authors $sortBy "asc") (sort $authors $sortBy "desc") }}
+      {{ range $ordered }}
+        {{ template "renderPersonRow" . }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{ if not $anyPrinted }}
+    <h2 class="people-group">All</h2>
+    {{ $ordered := cond $asc (sort $all $sortBy "asc") (sort $all $sortBy "desc") }}
+    {{ range $ordered }}
+      {{ template "renderPersonRow" . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+</section>
+
+<style>
+.container{max-width:1100px;margin:0 auto;padding:0 1rem;}
+.page-title{margin:2rem 0 1rem;}
+.people-group{margin:2rem 0 1rem;}
+.person-row{display:flex;gap:24px;align-items:flex-start;padding:28px 0;border-bottom:1px solid #eee;}
+.person-photo img{width:360px;max-width:38vw;height:auto;border-radius:12px;object-fit:cover;}
+.person-name{margin:0 0 .25rem;}
+.person-meta{color:#666;margin-bottom:.5rem;}
+.person-line{margin:.25rem 0;color:#555;}
+.person-links a{white-space:nowrap}
+@media (max-width:900px){
+  .person-row{flex-direction:column;gap:12px}
+  .person-photo img{width:100%;max-width:100%}
+}
+</style>

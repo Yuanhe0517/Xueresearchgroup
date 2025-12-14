@@ -1,0 +1,32 @@
+{{/* layouts/partials/people_card_item.html */}}
+{{- $p := .p -}}
+{{- $isPI := .isPI | default false -}}
+
+{{- $avatar := "" -}}
+{{- with $p.Resources.GetMatch "*avatar*" }}{{ $avatar = .RelPermalink }}{{ end -}}
+{{- if and (eq $avatar "") (isset $p.Params "avatar") -}}
+  {{- $img := (index $p.Params.avatar "image") | default $p.Params.avatar -}}
+  {{- $avatar = (printf "%v" $img | relURL) -}}
+{{- end -}}
+{{- if and (eq $avatar "") (isset $p.Params "image")  }}{{ $avatar = (printf "%v" $p.Params.image  | relURL) }}{{ end -}}
+{{- if and (eq $avatar "") (isset $p.Params "photo")  }}{{ $avatar = (printf "%v" $p.Params.photo  | relURL) }}{{ end -}}
+
+<article class="people-card {{ if $isPI }}people-card--pi{{ end }}">
+  <a class="people-card__avatar" href="{{ $p.RelPermalink }}" aria-label="{{ $p.Title }}">
+    {{- if $avatar -}}
+      <img src="{{ $avatar }}" alt="{{ $p.Title }}" loading="lazy">
+    {{- end -}}
+  </a>
+
+  <div class="people-card__body">
+    <h3 class="people-card__name"><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h3>
+    {{ with $p.Params.role }}<div class="people-card__role">{{ . }}</div>{{ end }}
+
+    {{- if $isPI -}}
+      {{- with $p.Params.summary -}}
+        <div class="people-card__summary">{{ . | markdownify }}</div>
+      {{- end -}}
+    {{- end -}}
+  </div>
+</article>
+

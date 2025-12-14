@@ -47,4 +47,8 @@
   height: auto;
 }
 
+/* Author profile: 暂时隐藏社交链接图标（Google Scholar/GitHub 等） */
+#profile-page .network-icon {
+  display: none;
+}
 

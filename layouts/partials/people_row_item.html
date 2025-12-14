@@ -1,0 +1,47 @@
+{{/* layouts/partials/people_row_item.html */}}
+{{- $p := . -}}
+{{- $avatar := "" -}}
+{{- with $p.Resources.GetMatch "*avatar*" }}{{ $avatar = .RelPermalink }}{{ end -}}
+{{- if and (eq $avatar "") (isset $p.Params "avatar") -}}
+  {{- $img := (index $p.Params.avatar "image") | default $p.Params.avatar -}}
+  {{- $avatar = (printf "%v" $img | relURL) -}}
+{{- end -}}
+{{- if and (eq $avatar "") (isset $p.Params "image")  }}{{ $avatar = (printf "%v" $p.Params.image  | relURL) }}{{ end -}}
+{{- if and (eq $avatar "") (isset $p.Params "photo")  }}{{ $avatar = (printf "%v" $p.Params.photo  | relURL) }}{{ end -}}
+
+{{- $isPI := false -}}
+{{- with $p.Params.user_groups -}}
+  {{- if (reflect.IsSlice .) -}}
+    {{- $isPI = (in . "PI") -}}
+  {{- else -}}
+    {{- $isPI = (eq . "PI") -}}
+  {{- end -}}
+{{- end -}}
+
+<article class="person-row">
+  <div class="person-photo">
+    {{ if $avatar }}<img src="{{ $avatar }}" alt="{{ $p.Title }}">{{ end }}
+  </div>
+  <div class="person-info">
+    <h3 class="person-name"><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h3>
+    <div class="person-meta">
+      {{ with $p.Params.role }}{{ . }}{{ end }}
+      {{ with $p.Params.position }}{{ . }}{{ end }}
+      {{ with $p.Params.enroll }} ({{ . }}){{ end }}
+    </div>
+    {{ with $p.Params.email }}<div class="person-line"><a href="mailto:{{ . }}">{{ . }}</a></div>{{ end }}
+    {{ with $p.Params.office }}<div class="person-line">Office: {{ . }}</div>{{ end }}
+    {{ if $isPI }}
+      {{ if $p.Params.summary }}
+        <div class="person-summary">{{ $p.Params.summary | markdownify }}</div>
+      {{ else }}
+        {{ with $p.Summary }}<div class="person-summary">{{ . | safeHTML }}</div>{{ end }}
+      {{ end }}
+    {{ end }}
+    <div class="person-links">
+      {{ with $p.Params.scholar }}<a href="{{ . }}" target="_blank" rel="noopener">Google Scholar</a>{{ end }}
+      {{ with $p.Params.researchgate }}{{ if $p.Params.scholar }} · {{ end }}<a href="{{ . }}" target="_blank" rel="noopener">ResearchGate</a>{{ end }}
+      {{ with $p.Params.github }} · <a href="{{ . }}" target="_blank" rel="noopener">GitHub</a>{{ end }}
+    </div>
+  </div>
+</article>

@@ -20,6 +20,13 @@ superuser: true
 # Short bio (displayed in user profile at end of posts)
 #bio: My research interests include distributed robotics, mobile computing and programmable #matter.
 
+# One-line/short summary shown on the People list page
+summary: |
+  Dr. Shi-Lei Xue obtained B.S. degree in Engineering from Nanjing University of Aeronautics and Astronautics. He earned Ph.D. degree in Solid Mechanics at Tsinghua University in 2018, with a research focus on the biomechanics of solid tumors. Then he joined Prof. Edouard Hannezo’s group at Institute of Science and Technology Austria as a postdoctoral research fellow until 2023, using methods from continuum mechanics and active matter physics to study living systems, as well as in the context of collaborations with developmental biologists.
+
+  Email: [xueshilei@westlake.edu.cn](mailto:xueshilei@westlake.edu.cn)  
+  Google Scholar: <https://scholar.google.com/citations?user=3VoO1pkAAAAJ&hl=zh-CN>
+
 interests:
 
 
@@ -67,5 +74,5 @@ highlight_name: false
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-  - Principal Investigators
+  - PI
 ---

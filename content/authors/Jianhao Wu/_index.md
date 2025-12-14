@@ -48,10 +48,10 @@ email: ""
 
 # People block 分组（务必与 people 页面 filters 一致）
 user_groups:
-  - Grad Students     # ← 和 content/people/_index.md 里的拼写完全一致
+  - PhD Student  # ← 和 content/people/_index.md 里的拼写完全一致
 
 # 排序（数字越小越靠前；首页精选可给更小的值）
-weight: 21
+weight: 4
 
 draft: false
 ---

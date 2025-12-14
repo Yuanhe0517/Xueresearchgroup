@@ -37,8 +37,7 @@ tags:
 featured: false  # 如果需要突出显示设置为 true
 
 # Links to external resources
-url_pdf: "https://www.journals.elsevier.com/developmental-cell"  # 文章链接，替换成实际的 PDF 链接
-url_code: "https://github.com/your-repo"         # 如果有代码，填写链接
+url_pdf: "https://www.sciencedirect.com/science/article/pii/S1534580725002485"  # 文章链接，替换成实际的 PDF 链接
 url_dataset: ''
 url_project: ''
 url_slides: ''

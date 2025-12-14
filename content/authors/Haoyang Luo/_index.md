@@ -1,3 +1,4 @@
+---
 # Display name 你的名字
 title: Haoyang Luo
 
@@ -9,12 +10,12 @@ last_name: Luo
 superuser: false
 
 # Role/position
-role: Research assistant
+role: Research Assistant
 
 # Avatar
 avatar:
-  image: 
-  alt_text: Wu Jianhao
+  image: /media/people/Haoyang-Luo.jpg   # 放到 static/media/people/ 目录
+  alt_text: Haoyang Luo
 
 # Short bio 你的学术兴趣
 bio: I'm interested in soft mechanics and have a background in experimental mechanics.
@@ -33,7 +34,7 @@ education: #你的教育背景
 social:
   - icon: envelope #邮箱
     icon_pack: fas
-    link: 
+    link: "mailto:luohaoyang@westlake.edu.cn"
   - icon: github # github
     icon_pack: fab
     link: 
@@ -45,9 +46,11 @@ email: ""
 
 # People block 分组（务必与 people 页面 filters 一致）
 user_groups:
-  - Research Assistants     # ← 和 content/people/_index.md 里的拼写完全一致
+  - Research Assistant     # ← 和 People 页面分组一致
 
 # 排序（数字越小越靠前；首页精选可给更小的值）
-weight: 21
+weight: 1
 
 draft: false
+
+---

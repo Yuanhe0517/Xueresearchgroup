@@ -23,10 +23,4 @@ sections:
       spacing:
         padding: ['20px', '0', '20px', '0']
       css_class: fullscreen
-
-    design:
-      slide_height: ''
-      is_fullscreen: true
-      loop: false
-      interval: 3000
 ---

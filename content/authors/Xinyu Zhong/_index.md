@@ -67,6 +67,9 @@ email: ''
 user_groups:
   #- Graduate student
   #- Researchers
-  - Grad Students
+  - PhD Student
+
+# 排序（数字越小越靠前）
+weight: 5
 ---
 My research interests include soft mechanics, biomechanics.
