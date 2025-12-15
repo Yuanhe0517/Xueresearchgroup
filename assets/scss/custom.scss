@@ -52,3 +52,25 @@
   display: none;
 }
 
+/* Author profile: hide Interests and make Education full width */
+#profile-page .ul-interests {
+  display: none;
+}
+#profile-page .col-md-5 {
+  display: none;
+}
+#profile-page .col-md-7 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+/* Author profile: hide top summary paragraph (bio) */
+#profile-page .article-style {
+  display: none;
+}
+
+/* Author profile: increase Education institution font size */
+#profile-page .ul-edu .description .institution {
+  font-size: 1rem;
+  line-height: 1.4;
+}

@@ -26,12 +26,13 @@ interests:
 
 education: #你的教育背景
   courses:
-    - course: MS in General and Fundamental Mechanics
-      institution: University of Chinese Academy of Sciences
-      year: 2025
     - course: BSc in Engineering Mechanics
       institution: Zhengzhou University
       year: 2022
+
+    - course: MSc in General and Fundamental Mechanics
+      institution: University of Chinese Academy of Sciences
+      year: 2025
 
 # 以下的没有就空出来即可
 social:

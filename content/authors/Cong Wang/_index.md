@@ -37,7 +37,7 @@ education:
     #- course: MEng in Artificial Intelligence
     #  institution: Massachusetts Institute of Technology
     #  year: 2009
-    - course: MEng Mechanical Engineering
+    - course: MSc in Mechanical Engineering
       institution: Hunan University
       year: 2025
 

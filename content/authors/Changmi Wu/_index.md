@@ -30,7 +30,7 @@ education: #你的教育背景
       institution: Wenzhou University
       year: 2020
 
-    - course:  MEng in Materials and Chemical Engineering
+    - course:  MSc in Materials and Chemical Engineering
       institution: Zhejiang Sci-Tech University
       year: 2024
 

@@ -24,7 +24,7 @@ sections:
         <style>
           /* —— 字体大小总控：改这些变量即可 —— */
           :root{
-            --home-h1: clamp(36px, 5vw, 64px);   /* 顶部大标题 */
+            --home-h1: clamp(24px, 3.3vw, 44px);   /* 顶部大标题 */
             --home-h2: clamp(28px, 3.2vw, 34px); /* 每个模块标题 */
             --home-text: 1.05rem;                /* 段落/列表字号 */
             --home-btn: 0.7rem;                    /* 按钮字号 */

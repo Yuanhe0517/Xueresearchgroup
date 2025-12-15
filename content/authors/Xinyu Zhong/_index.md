@@ -37,10 +37,10 @@ education:
     #- course: MEng in Artificial Intelligence
     #  institution: Massachusetts Institute of Technology
     #  year: 2009
-    - course: BE in Engineering Mechanics
+    - course: BSc in Engineering Mechanics
       institution: Dalian University of Technology
       year: 2022
-    - course: ME in Mechanics
+    - course: MSc in Mechanics
       institution: Xi'an Jiaotong University
       year: 2025
 

@@ -25,10 +25,10 @@ interests:
 
 education: #你的教育背景
   courses:
-    - course: Bachelor's degree in Civil Engineering
+    - course: BSc in Civil Engineering
       institution: Qinghai University
       year: 2022
-    - course: Master's degree in mechanics
+    - course: MSc in Mechanics
       institution: Tsinghua University
       year: 2025
 

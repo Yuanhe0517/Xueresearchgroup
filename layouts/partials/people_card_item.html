@@ -20,7 +20,6 @@
 
   <div class="people-card__body">
     <h3 class="people-card__name"><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h3>
-    {{ with $p.Params.role }}<div class="people-card__role">{{ . }}</div>{{ end }}
 
     {{- if $isPI -}}
       {{- with $p.Params.summary -}}
@@ -29,4 +28,3 @@
     {{- end -}}
   </div>
 </article>
-
