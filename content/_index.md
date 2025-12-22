@@ -83,10 +83,10 @@ sections:
           <div>
             <h2>Morphogenesis of biological tissues</h2>
             <ul>
-              <li>Cell and tissue mechanics</li>
               <li>Mechanochemical coupling</li>
+              <li>Stress-modulated growth and remodeling</li>
+              <li>Nematic order and topological defects</li>
             </ul>
-            <p><a class="btn-link" href="/research/soft-tissue/">Read more →</a></p>
           </div>
           <div class="imggrid">
             <div class="imgcell">
@@ -112,7 +112,6 @@ sections:
               <li>Phase transition</li>
               <li>Multi-physical coupling mechanisms </li>
             </ul>
-            <p><a class="btn-link" href="/research/soft-material/">Read more →</a></p>
           </div>
           <div class="imggrid">
             <div class="imgcell">
