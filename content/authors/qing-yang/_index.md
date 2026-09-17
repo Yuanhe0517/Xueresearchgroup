@@ -10,7 +10,7 @@ last_name: Yang
 superuser: false
 
 # Role/position
-role: Research Assistant
+role: PhD Student
 
 # Avatar
 avatar:
@@ -50,7 +50,7 @@ email: ""
 
 # People block 分组（务必与 people 页面 filters 一致）
 user_groups:
-  - Research Assistant    # ← 和 People 页面分组一致
+  - PhD Student
 
 # 排序（数字越小越靠前；首页精选可给更小的值）
 weight: 99

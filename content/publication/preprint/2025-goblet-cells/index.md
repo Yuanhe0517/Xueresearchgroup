@@ -7,20 +7,22 @@ authors:
   - Etienne Buscail
   - Salomé Neuvendel
   - Vishnu Krishnakumar
+  - Dhriti Saumya
+  - Laurent Malaquin
   - Thomas Mangeat
   - Shi-Lei Xue
   - Denis Krndija
-date: "2025-04-01T00:00:00Z"  # 发布日期，按实际情况调整
-doi: ""
+date: "2026-07-25T00:00:00Z"
+doi: "10.1038/s41467-026-76034-0"
 
-publishDate: "2025-04-01T00:00:00Z"  # 与实际日期匹配
+publishDate: "2026-07-25T00:00:00Z"
 
 # Publication type
-publication_types: ["preprint"]  # 期刊文章
+publication_types: ["article-journal"]
 
 # Publication name
-publication: "bioRxiv"
-publication_short: "bioRxiv"
+publication: "Nature Communications"
+publication_short: "Nat. Commun."
 
 # Abstract
 abstract: |
@@ -38,7 +40,7 @@ tags:
 featured: false  # 如果需要突出显示设置为 true
 
 # Links to external resources
-url_pdf: "https://www.biorxiv.org/content/10.1101/2025.04.01.646617v1"  # 文章链接，替换成实际的 PDF 链接
+url_pdf: "https://doi.org/10.1038/s41467-026-76034-0"
 url_dataset: ''
 url_project: ''
 url_slides: ''
@@ -47,7 +49,7 @@ url_video: ''
 
 # Featured image (optional)
 image:
-  caption: 'Image credit: [**bioRxiv**](https://www.biorxiv.org)'
+  caption: 'Image credit: [**Nature Communications**](https://www.nature.com/ncomms/)'
   focal_point: ""
   preview_only: false
 
