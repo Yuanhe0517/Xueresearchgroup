@@ -1,4 +1,10 @@
 {{ define "main" }}
+<style>
+  .profile-bio { color: #333; font-size: 1rem; line-height: 1.65; }
+  .profile-interest-list { margin: 0 0 1.5rem; color: #333; }
+  .profile-interest-item { display: block; margin: .35rem 0; }
+  .profile-interest-item::before { content: "•"; margin-right: .65rem; }
+</style>
 <section id="profile-page" class="pt-5">
   <div class="container">
     <div class="row">
@@ -22,14 +28,14 @@
 
       <div class="col-12 col-lg-8">
         {{ with .Content }}
-          <div class="article-style mb-4">{{ . }}</div>
+          <div class="profile-bio mb-4">{{ . }}</div>
         {{ end }}
 
         {{ with .Params.interests }}
           <div class="section-subheading">Research interests</div>
-          <ul class="ul-interests mb-4">
-            {{ range . }}<li>{{ . | markdownify }}</li>{{ end }}
-          </ul>
+          <div class="profile-interest-list">
+            {{ range . }}<div class="profile-interest-item">{{ . | markdownify }}</div>{{ end }}
+          </div>
         {{ end }}
 
         {{ with .Params.education }}
