@@ -1,0 +1,55 @@
+{{ define "main" }}
+<section id="profile-page" class="pt-5">
+  <div class="container">
+    <div class="row">
+      <aside class="col-12 col-lg-4 mb-4 mb-lg-0">
+        <div id="profile">
+          {{ with .Resources.GetMatch "*avatar*" }}
+            {{ $avatar := .Fill "270x270 Center" }}
+            <img class="avatar avatar-circle" width="{{ $avatar.Width }}" height="{{ $avatar.Height }}" src="{{ $avatar.RelPermalink }}" alt="{{ $.Title }}">
+          {{ end }}
+
+          <div class="portrait-title">
+            <h2>{{ .Title }}</h2>
+            {{ with .Params.role }}<h3>{{ . | markdownify }}</h3>{{ end }}
+          </div>
+
+          {{ with .Params.email }}
+            <p class="mt-3"><a href="mailto:{{ . }}">{{ . }}</a></p>
+          {{ end }}
+        </div>
+      </aside>
+
+      <div class="col-12 col-lg-8">
+        {{ with .Content }}
+          <div class="article-style mb-4">{{ . }}</div>
+        {{ end }}
+
+        {{ with .Params.interests }}
+          <div class="section-subheading">Research interests</div>
+          <ul class="ul-interests mb-4">
+            {{ range . }}<li>{{ . | markdownify }}</li>{{ end }}
+          </ul>
+        {{ end }}
+
+        {{ with .Params.education }}
+          {{ with .courses }}
+            <div class="section-subheading">Education</div>
+            <ul class="ul-edu fa-ul mb-0">
+              {{ range . }}
+                <li>
+                  <i class="fa-li fas fa-graduation-cap"></i>
+                  <div class="description">
+                    <p class="course">{{ .course }}{{ with .year }}, {{ . }}{{ end }}</p>
+                    {{ with .institution }}<p class="institution">{{ . }}</p>{{ end }}
+                  </div>
+                </li>
+              {{ end }}
+            </ul>
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
