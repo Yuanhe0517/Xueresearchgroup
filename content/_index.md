@@ -17,9 +17,9 @@ sections:
 
         Currently, we focus on the dynamics of active cell clusters, moving the field from qualitative description toward quantitative prediction. Our two major research directions are:
 
-        1. **Active cell clusters coupled with deformable matrices.** We investigate matrix-mediated self-assembly, tissue morphogenesis, and cancer invasion, with the goal of advancing from quantitative prediction to precise regulation.
+        1. **Cell self-assembly and tissue morphogenesis.** We investigate how cell self-assembly, tissue morphogenesis, and collective cell migration are regulated by mechanical interactions among pathogens, tumors, and host tissues, to uncover the mechanobiological principles underlying embryonic development, inflammatory responses, and cancer invasion.
 
-        2. **Growth and migration of active cell and bacterial clusters.** We examine how the physical and geometric properties of the mechanical environment regulate collective behavior and mechano-biological coupling.
+        2. **Modeling collective cell dynamics.** We develop theoretical models and numerical methods from solid mechanics, fluid mechanics, and soft-matter physics to quantitatively simulate and predict collective cell migration, tissue deformation, and remodeling.
 
         <!-- ====== 页面样式（含字体大小总控） ====== -->
         <style>
