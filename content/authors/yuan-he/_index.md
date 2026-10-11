@@ -25,7 +25,7 @@ interests:
 
 education:
   courses:
-    - course: BSc in Bioengineering/Applied Mathametics
+    - course: BSc in Biomedical Engineering/Applied Mathametics
       institution: Beihang University
       year: 2023
 

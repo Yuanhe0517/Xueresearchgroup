@@ -11,7 +11,7 @@ sections:
   - block: markdown
     content:
       title: |
-        Biological and Soft Mechanics Lab (BSML)
+        Biomechanics Lab (BML)
       text: |
         Our laboratory deciphers the “mechanical code” governing tissue morphology and cell fate through mechano-chemo-biological coupling. Across scales, from cells to tissues and from development to disease, we have identified "cell cluster mechanical synergy", revealed how tension and hydraulic pressure coordinate intestinal organoid morphogenesis and homeostasis, and developed a framework for tumor mechanical adaptation and vascular instability.
 
