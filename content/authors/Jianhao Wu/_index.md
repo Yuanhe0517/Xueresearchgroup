@@ -21,7 +21,8 @@ avatar:
 bio: My research interests include soft mechanics.
 
 interests:
-  - Soft mechanics
+  - >-
+    My research focuses on cell and tissue mechanics. I currently model and simulate cells and cell monolayers using passive or active (living) liquid crystal models, aiming to reveal the biophysical mechanisms of morphogenesis in development, regeneration, and disease progression.
 
 education: #你的教育背景
   courses:

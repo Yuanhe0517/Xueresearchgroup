@@ -2,6 +2,7 @@
 <style>
   .profile-bio { color: #333; font-size: 1rem; line-height: 1.65; }
   .profile-interest-list { margin: 0 0 1.5rem; color: #333; }
+  .profile-interest-text { margin: 0 0 1.5rem; color: #333; line-height: 1.65; }
   .profile-interest-item { display: block; margin: .35rem 0; }
   .profile-interest-item::before { content: "•"; margin-right: .65rem; }
 </style>
@@ -33,9 +34,13 @@
 
         {{ with .Params.interests }}
           <div class="section-subheading">Research interests</div>
-          <div class="profile-interest-list">
-            {{ range . }}<div class="profile-interest-item">{{ . | markdownify }}</div>{{ end }}
-          </div>
+          {{ if eq (len .) 1 }}
+            <div class="profile-interest-text">{{ index . 0 | markdownify }}</div>
+          {{ else }}
+            <div class="profile-interest-list">
+              {{ range . }}<div class="profile-interest-item">{{ . | markdownify }}</div>{{ end }}
+            </div>
+          {{ end }}
         {{ end }}
 
         {{ with .Params.education }}

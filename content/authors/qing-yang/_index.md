@@ -21,8 +21,8 @@ avatar:
 bio: My research interests include soft mechanics and molecular dynamics simulation.
 
 interests:
-  - Soft mechanics
-  - Molecular dynamics simulation
+  - >-
+    My research focuses on morphological pattern formation in biological systems through theoretical modeling and numerical simulations. My current work combines continuum mechanics, soft matter physics, and finite element methods to investigate pattern formation and evolution in active matter. The goal is to elucidate the fundamental physical mechanisms governing tissue morphogenesis and provide theoretical insights into the emergence of complex biological structures.
 
 education: #你的教育背景
   courses:

@@ -13,8 +13,8 @@ avatar:
 bio: My research interests include soft mechanics.
 
 interests:
-  - Soft mechanics
-  - Biomechanics
+  - >-
+    Using C2C12 myoblasts as a model, we study active nematic behavior in populations of spindle-shaped cells. We investigate how simple substrate patterns influence cell alignment, topological defects, and collective flows to understand how geometric boundaries shape tissue organization.
 
 education:
   courses:

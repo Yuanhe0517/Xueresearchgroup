@@ -25,8 +25,8 @@ role: PhD Student
 #bio: My research interests include soft mechanics, biomechanics.
 
 interests:
-  - Soft mechanics
-  - Biomechanics
+  - >-
+    My research focuses on the mechanical mechanisms underlying cell and tissue morphogenesis. I am particularly interested in how mechanical forces, cell–cell interactions, and the surrounding microenvironment regulate collective cell behaviors, tissue organization, and morphological changes. I also investigate how biological perturbations, such as infection, alter cellular mechanical interactions and influence collective dynamics and tissue morphogenesis. By integrating experimental observations, quantitative analysis, and theoretical modeling, I aim to understand the physical principles governing these processes under physiological and pathological conditions.
 
 
 education:

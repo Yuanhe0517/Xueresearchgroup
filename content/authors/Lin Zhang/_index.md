@@ -26,8 +26,8 @@ avatar:
 bio: My research interests include soft mechanics and biomechanics.
 
 interests:
-  - Soft mechanics
-  - Biomechanics
+  - >-
+    My research focuses on liquid–liquid phase separation (LLPS) and the membrane deformation it induces. Based on statistical thermodynamics and numerical simulations, I investigate the effects of finite-size constraints and membrane prewetting on phase equilibrium. I further explore LLPS-induced membrane morphological changes to elucidate their physical mechanisms and the relationship between LLPS and membrane mechanics.
 
 education:
   courses:

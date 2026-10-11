@@ -13,8 +13,8 @@ avatar:
 bio: My research interests include soft mechanics.
 
 interests:
-  - Soft mechanics
-  - Biomechanics
+  - >-
+    My research focuses on collective cell migration and mechanobiology. I am interested in how mechanical forces, cell–cell interactions, and geometric constraints regulate collective cell behavior. By combining experiments with theoretical modeling, I aim to uncover the physical mechanisms underlying collective cell dynamics.
 
 education:
   courses:

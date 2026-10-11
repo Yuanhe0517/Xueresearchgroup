@@ -20,8 +20,8 @@ avatar:
 bio: My research interests include soft mechanics and biomechanics.
 
 interests:
-  - Soft mechanics
-  - Biomechanics
+  - >-
+    My research lies at the intersection of biological physics, computational physics, and soft matter. I use large-scale simulations and continuum theories to understand how mechanical forces and geometry shape living systems and soft matter.
 
 education:
   courses:
