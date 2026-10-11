@@ -1,6 +1,5 @@
 {{ define "main" }}
 <style>
-  .profile-bio { color: #333; font-size: 1rem; line-height: 1.65; }
   .profile-interest-list { margin: 0 0 1.5rem; color: #333; }
   .profile-interest-text { margin: 0 0 1.5rem; color: #333; line-height: 1.65; }
   .profile-interest-item { display: block; margin: .35rem 0; }
@@ -28,10 +27,6 @@
       </aside>
 
       <div class="col-12 col-lg-8">
-        {{ with .Content }}
-          <div class="profile-bio mb-4">{{ . }}</div>
-        {{ end }}
-
         {{ with .Params.interests }}
           <div class="section-subheading">Research interests</div>
           {{ if eq (len .) 1 }}
